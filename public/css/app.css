@@ -1,8 +1,11 @@
+body {
+    font-family: 'Nunito';
+}
 .main-menu  {
     display: flex;
+    padding: 0;
     flex-flow: row;
-    justify-content: space-evenly;
-    width: 100%;
+    justify-content: space-around;
 }
 .main-menu > li {
     list-style: none;

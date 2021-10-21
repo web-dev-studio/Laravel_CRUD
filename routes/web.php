@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ShowController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,14 @@ use App\Http\Controllers\ContactController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/references', function () {
+    return view('references');
+});
 
 
-Route::resource('projects', ProjectController::class);
+Route::resource('career', ProjectController::class);
 Route::resource('contacts', ContactController::class);
+Route::resource('show', ShowController::class);
 
 
 // Route::resource('projects', 'ProjectController');

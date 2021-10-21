@@ -14,9 +14,9 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::latest()->paginate(5);
+        $career = Project::latest()->paginate(5);
 
-        return view('projects.index', compact('projects'))
+        return view('career.index', compact('career'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
@@ -27,7 +27,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        return view('career.create');
     }
 
     /**
@@ -49,8 +49,8 @@ class ProjectController extends Controller
 
         Project::create($request->all());
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project created successfully.');
+        return redirect()->route('career.index')
+            ->with('success', 'Company created successfully.');
     }
 
     /**
@@ -59,9 +59,9 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Project $project)
+    public function show(Project $career)
     {
-        return view('projects.show', compact('project'));
+        return view('career.show', compact('career'));
     }
 
     /**
@@ -70,10 +70,11 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Project $project)
+    public function edit(Project $career)
     {
-        return view('projects.edit', compact('project'));
+        return view('career.edit', compact('career'));
     }
+
     /**
      * Update the specified resource in storage.
      *
@@ -81,7 +82,7 @@ class ProjectController extends Controller
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Project $project)
+    public function update(Request $request, Project $career)
     {
         $request->validate([
             'name' => 'required',
@@ -91,22 +92,23 @@ class ProjectController extends Controller
             'from_date' => 'required',
             'technologies' => 'required'
         ]);
-        $project->update($request->all());
+        $career->update($request->all());
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project updated successfully');
+        return redirect()->route('career.index')
+            ->with('success', 'Company updated successfully');
     }
+
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Project $project)
+    public function destroy(Project $career)
     {
-        $project->delete();
+        $career->delete();
 
-        return redirect()->route('projects.index')
-            ->with('success', 'Project deleted successfully');
+        return redirect()->route('career.index')
+            ->with('success', 'Company deleted successfully');
     }
 }

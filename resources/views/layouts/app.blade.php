@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Mike Gordievsky - @yield('title')</title>
+    <title>Mike. The Engineer. - @yield('title')</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css"
         rel="stylesheet">
@@ -16,9 +16,6 @@
     </script>
 
     <style>
-        body {
-            background-color:  #EDF7EF
-        }
     </style>
 
 </head>
@@ -27,17 +24,19 @@
     @section('sidebar')
 
     @show
-    <menu class="main-menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/projects">Career</a></li>
-        <li><a href="/contacts">Contacts</a></li>
-    </menu>
+
     <div class="container">
+        <menu class="main-menu">
+            <li><a href="/">About</a></li>
+            <li><a href="/references">References</a></li>
+            <li><a href="/career">Career</a></li>
+            <li><a href="/contacts">Contacts</a></li>
+        </menu>
         @yield('content')
     </div>
     <div class="text-center footer">
 
-        <i>&copy; Mike Gordievsky</i>
+        <i>&copy; Mike. The Engineer.</i>
 
     </div>
 </body>

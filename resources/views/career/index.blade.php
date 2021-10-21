@@ -4,11 +4,10 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h1>Mike Gordievsky</h1>
                 <h2>Career</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="{{ route('projects.create') }}" title="Create a project"> <i class="fas fa-plus-circle"></i>
+                <a class="btn btn-success" href="{{ route('career.create') }}" title="Create a company"> <i class="fas fa-plus-circle"></i>
                     </a>
             </div>
         </div>
@@ -32,24 +31,24 @@
             <!-- <th>Date Created</th> -->
             <th>Actions</th>
         </tr>
-        @foreach ($projects as $project)
+        @foreach ($career as $car)
             <tr>
                 <td>{{ ++$i }}</td>
-                <td>{{ $project->name }}</td>
-                <td>{{ $project->introduction }}</td>
-                <td>{{ $project->location }}</td>
-                <td>{{ $project->cost }}</td>
-                <td>{{ substr($project->from_date, 0, 7) }}</td>
-                <td>{{ $project->technologies }}</td>
-                <!-- <td>{{ date_format($project->created_at, 'm/y') }}</td> -->
+                <td>{{ $car->name }}</td>
+                <td>{{ $car->introduction }}</td>
+                <td>{{ $car->location }}</td>
+                <td>{{ $car->cost }}</td>
+                <td>{{ substr($car->from_date, 0, 7) }}</td>
+                <td>{{ $car->technologies }}</td>
+                <!-- <td>{{ date_format($car->created_at, 'm/y') }}</td> -->
                 <td>
-                    <form action="{{ route('projects.destroy', $project->id) }}" method="POST">
+                    <form action="{{ route('career.destroy', $car->id) }}" method="POST">
 
-                        <a href="{{ route('projects.show', $project->id) }}" title="show">
+                        <a href="{{ route('career.show', $car->id) }}" title="show">
                             <i class="fas fa-eye text-success  fa-lg"></i>
                         </a>
 
-                        <a href="{{ route('projects.edit', $project->id) }}">
+                        <a href="{{ route('career.edit', $car->id) }}">
                             <i class="fas fa-edit fa-lg"></i>
 
                         </a>
@@ -67,6 +66,6 @@
         @endforeach
     </table>
 
-    {!! $projects->links() !!}
+    {!! $career->links() !!}
 
 @endsection

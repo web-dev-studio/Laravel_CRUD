@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h1>Mike Gordievsky</h1>
+                <h1>Mike. The Engineer.</h1>
                 <h2>Contacts</h2>
             </div>
             <div class="pull-right">
